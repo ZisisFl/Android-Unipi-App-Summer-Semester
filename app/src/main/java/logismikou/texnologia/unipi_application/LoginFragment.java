@@ -9,12 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginFragment extends Fragment {
 
     Button login_button;
     EditText email_text,password_text;
+    static Boolean logged = false;
+    //TextView email_display;
+
     public LoginFragment() {
         // Required empty public constructor
     }
@@ -29,6 +33,7 @@ public class LoginFragment extends Fragment {
         email_text = (EditText)v.findViewById(R.id.email_text);
         password_text = (EditText)v.findViewById(R.id.password_text);
         login_button = (Button)v.findViewById(R.id.login_button);
+        //email_display = (TextView)v.findViewById(R.id.email_display);
 
 
         login_button.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +47,14 @@ public class LoginFragment extends Fragment {
                 String password = password_text.getText().toString();
                 String password_db = databaseAccess.get_pass(email);
 
-                Toast.makeText(getActivity(),"Database pass"+password_db,Toast.LENGTH_SHORT).show();
+                if (password.equals(password_db))
+                {
+                    Toast.makeText(getActivity(),"Successful Login",Toast.LENGTH_SHORT).show();
+                    logged = true;
+                    //email_display.setText(email);
+                }
+                else
+                    Toast.makeText(getActivity(),"Wrong email or password",Toast.LENGTH_SHORT).show();
                 databaseAccess.close();
             }
         });
