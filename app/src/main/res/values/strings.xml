@@ -7,8 +7,27 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="email_to">
+        <item>Τμ. Οικονομικής Επιστήμης</item>
+        <item>Τμ. Οργάνωσης και Διοίκησης Επιχειρήσεων</item>
+        <item>Τμ. Διεθνών και Ευρωπαϊκών Σπουδών</item>
+        <item>Τμ. Τουριστικών Σπουδών</item>
+        <item>Τμ. Στατιστικής και Ασφαλιστικής Επιστήμης</item>
+        <item>Τμ. Χρηματοοικονομικής και Τραπεζικής Διοικητικής</item>
+        <item>Τμ. Βιομηχανικής Διοίκησης και Τεχνολογίας</item>
+        <item>Τμ. Ναυτιλιακών Σπουδών</item>
+        <item>Τμ. Πληροφορικής</item>
+        <item>Τμ. Ψηφιακών Συστημάτων</item>
+        <item>Διεύθυνση Σπουδών και Φοιτητικής Μέριμνας</item>
+        <item>Διεύθυνση Διοικητικού</item>
+        <item>Διεύθυνση Οικονομικού</item>
+        <item>Διεύθυνση Μηχανοργάνωσης και Τεχνικών έργων</item>
+        <item>Διεύθυνση Πανεπιστημιακών Οργάνων</item>
+        <item>Τμήμα Διεθνών και Δημόσιων Σχέσεων</item>
+        <item>Βιβλιοθήκη</item>
+    </string-array>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="login_button">Login</string>
+    <string name="login_button">Εισοδος</string>
 </resources>
