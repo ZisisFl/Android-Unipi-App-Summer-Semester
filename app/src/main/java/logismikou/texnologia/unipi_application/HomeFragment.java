@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class HomeFragment extends Fragment {
 
-    WebView home_web;
+    WebView home_web,home;
     TextView news1, news2, news3, news4;
     Button back_button;
 
@@ -28,6 +28,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         home_web = (WebView)v.findViewById(R.id.home_web);
+        home = (WebView)v.findViewById(R.id.home);
 
         back_button = (Button)v.findViewById(R.id.back_button);
 
@@ -36,12 +37,22 @@ public class HomeFragment extends Fragment {
         news3 = (TextView)v.findViewById(R.id.news3);
         news4 = (TextView)v.findViewById(R.id.news4);
 
+        home.loadUrl("file:///android_asset/pages/home_main.html");
+
+        select_news();
+        go_back();
+
+        return v;
+    }
+
+    private void select_news(){
         news1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 home_web.setVisibility(View.VISIBLE);
                 home_web.loadUrl("file:///android_asset/pages/home1.html");
                 back_button.setVisibility(View.VISIBLE);
+                home.setVisibility(View.GONE);
             }
         });
 
@@ -51,6 +62,7 @@ public class HomeFragment extends Fragment {
                 home_web.setVisibility(View.VISIBLE);
                 home_web.loadUrl("file:///android_asset/pages/home2.html");
                 back_button.setVisibility(View.VISIBLE);
+                home.setVisibility(View.GONE);
             }
         });
 
@@ -60,6 +72,7 @@ public class HomeFragment extends Fragment {
                 home_web.setVisibility(View.VISIBLE);
                 home_web.loadUrl("file:///android_asset/pages/home3.html");
                 back_button.setVisibility(View.VISIBLE);
+                home.setVisibility(View.GONE);
             }
         });
 
@@ -69,18 +82,20 @@ public class HomeFragment extends Fragment {
                 home_web.setVisibility(View.VISIBLE);
                 home_web.loadUrl("file:///android_asset/pages/home4.html");
                 back_button.setVisibility(View.VISIBLE);
+                home.setVisibility(View.GONE);
             }
         });
+    }
 
+    private void go_back(){
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 home_web.setVisibility(View.GONE);
                 back_button.setVisibility(View.GONE);
+                home.setVisibility(View.VISIBLE);
             }
         });
-
-        return v;
     }
 
 }

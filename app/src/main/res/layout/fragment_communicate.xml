@@ -76,13 +76,16 @@
 
         <Button
             android:id="@+id/send_button"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="140dp"
-            android:layout_marginStart="140dp"
+            android:layout_marginEnd="143dp"
+            android:layout_marginLeft="143dp"
+            android:layout_marginRight="143dp"
+            android:layout_marginStart="143dp"
             android:layout_marginTop="64dp"
             android:text="ΑΠΟΣΤΟΛΗ"
             android:textColor="@android:color/background_dark"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -108,7 +111,7 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="343dp"
+            android:layout_width="0dp"
             android:layout_height="118dp"
             android:layout_marginEnd="20dp"
             android:layout_marginLeft="20dp"
@@ -125,7 +128,7 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="230dp"
+            android:layout_width="0dp"
             android:layout_height="71dp"
             android:layout_marginEnd="75dp"
             android:layout_marginLeft="75dp"
@@ -141,12 +144,15 @@
 
         <Button
             android:id="@+id/new_send"
-            android:layout_width="129dp"
+            android:layout_width="0dp"
             android:layout_height="45dp"
+            android:layout_marginEnd="127dp"
             android:layout_marginLeft="128dp"
+            android:layout_marginRight="127dp"
             android:layout_marginStart="128dp"
             android:layout_marginTop="40dp"
             android:text="ΝΕΟ ΑΙΤΗΜΑ"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
     </android.support.constraint.ConstraintLayout>

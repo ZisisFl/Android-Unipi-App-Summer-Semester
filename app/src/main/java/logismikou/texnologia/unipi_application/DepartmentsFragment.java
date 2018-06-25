@@ -14,7 +14,7 @@ public class DepartmentsFragment extends Fragment {
 
     Button main_1, main_2, main_3, main_4, first_1,
         first_2, first_3, first_4, sec_1, sec_2,
-    third_1, third_2, forth_1, forth_2;
+    third_1, third_2, forth_1, forth_2, back_button2;
     ConstraintLayout main_layout, first_sub, second_sub, third_sub, forth_sub;
     WebView page;
 
@@ -51,12 +51,21 @@ public class DepartmentsFragment extends Fragment {
         third_2 = (Button)v.findViewById(R.id.third_2);
         forth_1 = (Button)v.findViewById(R.id.forth_1);
         forth_2 = (Button)v.findViewById(R.id.forth_2);
+        back_button2 = (Button)v.findViewById(R.id.back_button2);
 
+        pick_category();
+        go_back();
+
+        return v;
+    }
+
+    private void pick_category(){
         main_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 main_layout.setVisibility(View.GONE);
                 first_sub.setVisibility(View.VISIBLE);
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -65,6 +74,7 @@ public class DepartmentsFragment extends Fragment {
             public void onClick(View v) {
                 main_layout.setVisibility(View.GONE);
                 second_sub.setVisibility(View.VISIBLE);
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -73,6 +83,7 @@ public class DepartmentsFragment extends Fragment {
             public void onClick(View v) {
                 main_layout.setVisibility(View.GONE);
                 third_sub.setVisibility(View.VISIBLE);
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -81,6 +92,7 @@ public class DepartmentsFragment extends Fragment {
             public void onClick(View v) {
                 main_layout.setVisibility(View.GONE);
                 forth_sub.setVisibility(View.VISIBLE);
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -91,6 +103,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Οικονομικής Επιστήμης.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -101,6 +114,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Οργάνωσης & Διοίκησης Επιχειρήσεων.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -111,6 +125,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Διεθνών & Ευρωπαϊκών Σπουδών.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -121,6 +136,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Τουριστικών Σπουδών.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -131,6 +147,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Ναυτιλιακών Σπουδών.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -141,6 +158,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Tμήμα Βιομηχανικής Διοίκησης & Tεχνολογίας.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -151,6 +169,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Χρηματοοικονομικής και Τραπεζικής Διοικητικής.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -161,6 +180,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Στατιστικής & Ασφαλιστικής Επιστήμης.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -171,6 +191,7 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Πληροφορικής.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -181,9 +202,24 @@ public class DepartmentsFragment extends Fragment {
                 //OPEN PAGE
                 page.setVisibility(View.VISIBLE);
                 page.loadUrl("file:///android_asset/pages/Τμήμα Ψηφιακών Συστημάτων.html");
+                back_button2.setVisibility(View.VISIBLE);
             }
         });
-        return v;
+    }
+
+    private void go_back(){
+        back_button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                page.setVisibility(View.GONE);
+                back_button2.setVisibility(View.GONE);
+                main_layout.setVisibility(View.VISIBLE);
+                first_sub.setVisibility(View.GONE);
+                second_sub.setVisibility(View.GONE);
+                third_sub.setVisibility(View.GONE);
+                forth_sub.setVisibility(View.GONE);
+            }
+        });
     }
 
 }

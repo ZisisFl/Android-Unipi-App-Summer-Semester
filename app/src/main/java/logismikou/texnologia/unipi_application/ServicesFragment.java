@@ -9,12 +9,11 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 
 
-public class HistoryFragment extends Fragment {
+public class ServicesFragment extends Fragment {
 
     WebView web;
 
-
-    public HistoryFragment() {
+    public ServicesFragment() {
         // Required empty public constructor
     }
 
@@ -23,15 +22,14 @@ public class HistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_history, container, false);
-
+        View v = inflater.inflate(R.layout.fragment_services, container, false);
         web = (WebView)v.findViewById(R.id.web);
         show_page();
         return v;
     }
 
     private void show_page(){
-        web.loadUrl("file:///android_asset/pages/history.html");
+        web.loadUrl("file:///android_asset/pages/Γενικές Πληροφορίες για τις Ηλεκτρονικές Υπηρεσίες του Πανεπιστημίου Πειραιώς στους Φοιτητές.html");
     }
 
 }
